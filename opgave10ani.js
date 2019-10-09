@@ -4,6 +4,8 @@ let o = document.querySelector("#op");
 let n = document.querySelector("#ned");
 let pm = document.querySelector("#pacman");
 
+
+let tv, th, to, tn;
 let pmpx = 5;
 
 
@@ -26,14 +28,25 @@ document.addEventListener("keydown", function (e) {
 
 
 function flytVenstre() {
+    clearTimeout(tv)
     pm.style.left = pm.offsetLeft - pmpx + "px";
+    tv = setTimeout(flytVenstre, 50);
 }
+
 function flytHoejre() {
+    clearTimeout(th)
     pm.style.left = pm.offsetLeft + pmpx + "px";
+    th = setTimeout(flytHoejre, 50);
 }
+
 function flytOp() {
+    clearTimeout(to)
     pm.style.top = pm.offsetTop - pmpx + "px";
+    to = setTimeout(flytOp, 50);
 }
+
 function flytNed() {
+    clearTimeout(tn)
     pm.style.top = pm.offsetTop + pmpx + "px";
+    tn = setTimeout(flytNed, 50);
 }
